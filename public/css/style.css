@@ -1,0 +1,52 @@
+#container{
+
+margin-left: auto;
+margin-right: auto;
+width: 800px;
+
+
+}
+
+#tetris{
+
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#header{
+
+    width: 800px;
+    min-height: 100px;
+    color:aquamarine;
+    text-align: center;
+    background-color: darkgreen;
+    margin-bottom: 40px;
+}
+
+
+#kwadrat{
+    
+    width: 21px;
+    height: 21px;
+    color: white;
+    background-color: rgb(154, 238, 20);
+    margin: 0px;
+    border: 1px solid rgb(48, 47, 47);  /* obramowanie */
+    border-radius: 1px;
+   
+}
+
+
+.pole{
+
+    text-align: center;
+    width: 23px;
+    height: 23px;
+    float: left;
+    background-color:rgb(90, 65, 65);
+    margin: 1px;
+    border: 1px solid rgb(75, 18, 18);  /* obramowanie */
+    border-radius: 1px;    
+}
