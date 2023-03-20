@@ -1,52 +1,74 @@
-#container{
-
-margin-left: auto;
-margin-right: auto;
-width: 800px;
-
-
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  text-align: center;
 }
 
-#tetris{
-
-    width: 330px;
-    margin-left: auto;
-    margin-right: auto;
-    
+#tetris {
+  display: inline-table;
 }
 
-#header{
-
-    width: 800px;
-    min-height: 100px;
-    color:aquamarine;
-    text-align: center;
-    background-color: darkgreen;
-    margin-bottom: 40px;
+img {
+  width: 600px;
+  height: 100px;
 }
 
-
-#kwadrat{
-    
-    width: 21px;
-    height: 21px;
-    color: white;
-    background-color: rgb(154, 238, 20);
-    margin: 0px;
-    border: 1px solid rgb(48, 47, 47);  /* obramowanie */
-    border-radius: 1px;
-   
+#kwadrat {
+  width: 21px;
+  height: 21px;
+  color: white;
+  background-color: rgb(154, 238, 20);
+  margin: 1px;
+  /* border: 2px solid rgb(75, 18, 18); obramowanie */
+  border-radius: 2px;
 }
 
+.pole {
+  text-align: center;
+  width: 23px;
+  height: 23px;
+  float: left;
+  background-color: rgb(90, 65, 65);
+  margin: 0;
+  border: 1px solid rgb(75, 18, 18); /* obramowanie */
+  border-radius: 2px;
+}
 
-.pole{
+body {
+  background-image: url(https://cdnb.artstation.com/p/assets/images/images/038/204/477/large/samantha-stahlke-tetris-bg.jpg?1622474127);
+}
 
-    text-align: center;
-    width: 23px;
-    height: 23px;
-    float: left;
-    background-color:rgb(90, 65, 65);
-    margin: 1px;
-    border: 1px solid rgb(75, 18, 18);  /* obramowanie */
-    border-radius: 1px;    
+.btn {
+  /* background-color: rgb(7, 103, 205); */
+  background: rgb(9, 20, 97);
+  background: radial-gradient(
+    circle,
+    rgba(9, 20, 97, 1) 0%,
+    rgba(114, 28, 167, 1) 100%
+  );
+  border: 2px;
+  border-radius: 2px;
+  color: white;
+  padding: 12px 16px;
+  margin: 2px 10px 2px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background: rgb(129, 136, 182);
+  background: radial-gradient(
+    circle,
+    rgba(129, 136, 182, 1) 0%,
+    rgba(28, 56, 167, 1) 100%
+  );
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

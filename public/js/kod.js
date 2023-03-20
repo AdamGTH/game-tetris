@@ -167,7 +167,7 @@ function main() {
   line_row++;
 }
 
-function stop() {
+function pause() {
   clearTimeout(tim);
 }
 function changePosition() {
