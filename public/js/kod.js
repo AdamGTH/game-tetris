@@ -27,6 +27,8 @@ const figures = ["elkaL", "elkaR", "line", "square", "eta", "fourL", "fourR"];
 let num_figure = getRandomInt(7);
 let pos = ["pos1", "pos2", "pos3", "pos4"];
 let num_pos = 0;
+let scores = 0;
+let level = 1;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -52,7 +54,7 @@ window.addEventListener(
       case "Down": // IE/Edge specific value
       case "ArrowDown":
         // Do something for "down arrow" key press.
-        acceleration_time = 100;
+        acceleration_time = 90;
         break;
       case "Up": // IE/Edge specific value
       case "ArrowUp":
@@ -98,6 +100,8 @@ function clear_table() {
   var zm = "";
   var i = 0;
   var j = 0;
+  document.querySelector(".scores").innerHTML = `<span>SCORE:${scores}</span>`;
+  document.querySelector(".level").innerHTML = `<span>LEVEL:${level}</span>`;
 
   for (j = 0; j < col.length; j++) {
     if (j == col.length - 1) {
@@ -142,6 +146,9 @@ function main() {
       line_row,
       "save"
     );
+    if (line_row == 0) {
+      game_over();
+    }
     line_row = 0;
     line_col = col.length / 2;
     if (clear_and_sort()) {
@@ -170,6 +177,19 @@ function main() {
 function pause() {
   clearTimeout(tim);
 }
+
+function game_over() {
+  var img = new Image();
+  let width = "500";
+  let height = "800";
+  img.src =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGhkj0SLSlxiQjUtUfQd-ZJOdBbnRrMfm88g&usqp=CAU";
+
+  document.getElementById(
+    "tetris"
+  ).innerHTML = `<img src= ${img.src} width = ${width}  height = ${height}>`;
+}
+
 function changePosition() {
   clearTimeout(tim);
   figureOperation(
@@ -295,6 +315,7 @@ function clear_and_sort() {
           sort_row = true;
           flag = 1;
           count = 0;
+          scores += 10; // dodanie punktów za skasowanie rzędu
           for (j = 0; j < r; j++) {
             //pętla sortująca
             busy[r - j] = busy[r - 1 - j];
@@ -304,6 +325,17 @@ function clear_and_sort() {
       } else sort_row = false;
     }
   }
+
+  if (scores > 50) {
+    // w przypadku zwiększenia poziomu trudności
+    scores = 0;
+    level += 1;
+    acceleration_time -= 10;
+    time_level -= 10;
+  }
+
+  document.querySelector(".scores").innerHTML = `<span>SCORE:${scores}</span>`;
+  document.querySelector(".level").innerHTML = `<span>LEVEL:${level}</span>`;
 
   return flag;
 }
