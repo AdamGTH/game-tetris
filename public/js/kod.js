@@ -179,15 +179,8 @@ function pause() {
 }
 
 function game_over() {
-  var img = new Image();
-  let width = "500";
-  let height = "800";
-  img.src =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGhkj0SLSlxiQjUtUfQd-ZJOdBbnRrMfm88g&usqp=CAU";
-
-  document.getElementById(
-    "tetris"
-  ).innerHTML = `<img src= ${img.src} width = ${width}  height = ${height}>`;
+  document.getElementById("tetris").innerHTML =
+    "<span style = 'font-size: 72px;'>GAME OVER</span><div class='buttons'><button class='btn' onclick='on_load()'><i>try again</i></button></div>";
 }
 
 function changePosition() {
