@@ -1,19 +1,25 @@
 {
-  "name": "tetris-node",
+  "name": "game-tetris",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.21"
-  }
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamGTH/game-tetris.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamGTH/game-tetris/issues"
+  },
+  "homepage": "https://github.com/AdamGTH/game-tetris#readme"
 }

@@ -146,9 +146,7 @@ function main() {
       line_row,
       "save"
     );
-    if (line_row == 0) {
-      game_over();
-    }
+    
     line_row = 0;
     line_col = col.length / 2;
     if (clear_and_sort()) {
@@ -171,6 +169,14 @@ function main() {
     line_row,
     "draw"
   );
+
+  if (line_row == 0) {
+    if(busy[line_row][line_col] == 1){  // koniec gry
+      clearTimeout(tim);
+      game_over();
+    }
+     
+  }
   line_row++;
 }
 
